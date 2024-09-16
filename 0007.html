@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocorrência #007</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/imagem-removebg-preview.png">
+    <link rel="stylesheet" href="assets/css/vermelho.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+            <img src="assets/img/imagem-removebg-preview.png" alt="Logo">
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="historico.html" class="nav-link">Histórico</a></li>
+                    <li class="nav-item"><a href="devolucoes.html" class="nav-link">Devoluções</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Sair</a></li>
+                </ul>
+            </div>
+    
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="assets/img/menu.svg" alt="menu"></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="historico.html" class="nav-link">Histórico</a></li>
+                <li class="nav-item"><a href="devolucoes.html" class="nav-link">Devoluções</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Sair</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <h1>OCORRÊNCIA</h1>
+        <h2>Problemas com a fonte de alimentação  #007</h2>
+        <p class="rm-number">RM996045</p>
+
+        <div class="details">
+            <p><strong>RM Professor :</strong> 987364</p>
+            <p><strong>Data :</strong> 12/09/2024 &nbsp;&nbsp;&nbsp; <strong>Período :</strong> Matutino</p>
+            <p><strong>Laboratório :</strong> 2 &nbsp;&nbsp;&nbsp; <strong>Andar :</strong> 2 &nbsp;&nbsp;&nbsp; <strong>Máquina :</strong> 042183</p>
+        </div>
+
+        <div>
+            <p class="descricao1"><strong>Descrição do problema:</strong></p>
+            <p>Aluno ao tentar ligar o computador
+                o mesmo não ligou.</p> 
+        </div> 
+    </div>
+    <div class="card">
+        <div class="problema">
+            <p class="descricao2"><strong>Resolução do problema:</strong></p>
+            <textarea name="descricao7" id="descricao7" rows="10" cols="160"></textarea>
+          </div>
+    </div>
+
+    <form id="ocorrenciaForm" action="devolucoes.html" method="get">
+        <button type="button" class="btn-voltar" onclick="confirmarEnvio()">Enviar</button>
+    </form>
+    <script>
+        const FORM_ID = 'descricao7'; // Identificador único para este formulário
+
+        function confirmarEnvio() {
+            const textarea = document.getElementById(FORM_ID).value;
+            if (textarea.trim() === '') {
+                alert('Por favor, preencha a descrição do problema.');
+                return;
+            }
+            if (confirm('Tem certeza que deseja enviar?')) {
+                document.getElementById('ocorrenciaForm').submit();
+            }
+        }
+
+        window.onload = function() {
+            const descricao = localStorage.getItem(FORM_ID);
+            if (descricao) {
+                document.getElementById(FORM_ID).value = descricao;
+                localStorage.removeItem(FORM_ID);
+            }
+        };
+
+        window.addEventListener('beforeunload', function() {
+            const descricao = document.getElementById(FORM_ID).value;
+            localStorage.setItem(FORM_ID, descricao);
+        });
+    </script>
+    <script src="assets/js/nav.js"></script>
+</body>
+</html>

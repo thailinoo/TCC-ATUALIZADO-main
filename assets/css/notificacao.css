@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Evita a rolagem */
+}
+
+body.custom-background {
+    font-family: 'Outfit', sans-serif;
+    background-size: cover;
+    background-position: top left;
+    background: linear-gradient(#000000, #fafafa 420%);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card.principal {
+    background-color: #fafafa; /* Cor de fundo do card principal */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo do card principal */
+    position: relative; /* Necessário para posicionar o botão 'X' */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Faz com que os cards menores ocupem a largura disponível */
+    gap: 10px; /* Espaço entre os cards menores */
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px #000000;
+    padding: 0.3px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card.vermelho {
+    background-color: rgba(254, 0, 0, 0.5);
+}
+
+.card.amarelo {
+    background-color: rgba(251, 255, 44, 0.5);
+}
+
+.card.verde {
+    background-color: rgba(46, 222, 18, 0.5);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo {
+    max-width: 250px;
+    max-height: 200px;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #000000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-decoration: none; 
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.close-button:focus {
+    outline: none;
+}
